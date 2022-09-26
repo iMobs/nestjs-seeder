@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-seeder",
+  "name": "@imobs/nestjs-seeder",
   "version": "0.2.0",
   "description": "An extension library for NestJS to perform seeding.",
   "main": "dist/index.js",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edwardanthony/nestjs-seeder"
+    "url": "git+https://github.com/iMobs/nestjs-seeder"
   },
-  "bugs": "https://github.com/edwardanthony/nestjs-seeder/issues",
-  "homepage": "https://github.com/edwardanthony/nestjs-seeder#readme",
+  "bugs": "https://github.com/iMobs/nestjs-seeder/issues",
+  "homepage": "https://github.com/iMobs/nestjs-seeder#readme",
   "keywords": [
     "seeding",
     "seeder",
@@ -25,15 +25,17 @@
     "nestjs",
     "seeder"
   ],
-  "author": "Edward Anthony <edwardanthony@fastmail.com>",
+  "contributors": [
+    "Edward Anthony <edwardanthony@fastmail.com>",
+    "Ian Mobley (https://github.com/iMobs)"
+  ],
   "license": "MIT",
   "dependencies": {
-    "faker": "^4.1.0"
+    "@faker-js/faker": "^7.5.0"
   },
   "devDependencies": {
     "@nestjs/common": "^7.3.1",
     "@nestjs/core": "^7.3.1",
-    "@types/faker": "^4.1.12",
     "@types/node": "^14.0.14",
     "reflect-metadata": "*",
     "rimraf": "^3.0.2",
