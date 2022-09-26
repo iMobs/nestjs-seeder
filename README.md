@@ -4,7 +4,7 @@ An extension library for NestJS to perform seeding.
 
 ### 1. Install the dependency
 
-`npm install nestjs-seeder --save-dev`
+`npm install @imobs/nestjs-seeder --save-dev`
 
 ### 2. Define the model class
 
@@ -15,7 +15,7 @@ In this example, we'll use `@nestjs/mongoose` to define our model. But you could
 ```typescript
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 import { Document } from "mongoose";
-import { Factory } from "nestjs-seeder";
+import { Factory } from "@imobs/nestjs-seeder";
 
 @Schema()
 export class User extends Document {
@@ -74,7 +74,7 @@ import { Injectable } from "@nestjs/common";
 import { InjectModel } from "@nestjs/mongoose";
 import { Model } from "mongoose";
 import { User } from "../schemas/user.schema";
-import { Seeder, DataFactory } from "nestjs-seeder";
+import { Seeder, DataFactory } from "@imobs/nestjs-seeder";
 
 @Injectable()
 export class UsersSeeder implements Seeder {
@@ -101,7 +101,7 @@ Create a seeder file under `src` folder in your NestJS project and name it `seed
 #### src/seeder.ts
 
 ```typescript
-import { seeder } from "nestjs-seeder";
+import { seeder } from "@imobs/nestjs-seeder";
 import { MongooseModule } from "@nestjs/mongoose";
 import { User, userSchema } from "./schemas/user.schema";
 import { UsersSeeder } from "./seeders/users.seeder";
@@ -194,4 +194,4 @@ export class User extends Document {
 
 ## 📜 License
 
-`nestjs-seeder` is [MIT licensed](LICENSE).
+`@imobs/nestjs-seeder` is [MIT licensed](LICENSE).

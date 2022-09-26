@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { Factory } from 'nestjs-seeder';
+import { Factory } from '@imobs/nestjs-seeder';
 
 @Schema()
 export class User extends Document {
