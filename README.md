@@ -1,26 +1,4 @@
-<p align="center">
 An extension library for NestJS to perform seeding.
-</p>
-<p align="center" style="max-width: 450px; margin: auto;">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-   <a href="https://github.com/edwardanthony/nestjs-seeder" title="All Contributors"><img src="https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square" /></a>
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-   <a href="https://github.com/edwardanthony/nestjs-seeder"><img src="https://img.shields.io/spiget/stars/1000?color=brightgreen&label=Star&logo=github" /></a>
-   <a href="https://www.npmjs.com/nestjs-seeder" target="_blank">
-   <img src="https://img.shields.io/npm/v/nestjs-seeder" alt="NPM Version" /></a>
-   <a href="https://www.npmjs.com/nestjs-seeder" target="_blank">
-   <img src="https://img.shields.io/npm/l/nestjs-seeder" alt="Package License" /></a>
-   <a href="https://www.npmjs.com/nestjs-seeder" target="_blank">
-   <img src="https://img.shields.io/npm/dm/nestjs-seeder" alt="NPM Downloads" /></a>
-   <a href="https://github.com/edwardanthony/nestjs-seeder" target="_blank">
-   <img src="https://s3.amazonaws.com/assets.coveralls.io/badges/coveralls_95.svg" alt="Coverage" /></a>
-   <a href="https://github.com/edwardanthony/nestjs-seeder"><img src="https://img.shields.io/badge/Github%20Page-nestjs.seeder-yellow?style=flat-square&logo=github" /></a>
-   <a href="https://github.com/edwardanthony"><img src="https://img.shields.io/badge/Author-Edward%20Anthony-blueviolet?style=flat-square&logo=appveyor" /></a>
-   <a href="https://twitter.com/edward_anthony8" target="_blank">
-   <img src="https://img.shields.io/twitter/follow/edward_anthony8.svg?style=social&label=Follow"></a>
-</p>
-
-### This library does not depend on the database type that you use
 
 ## How to use
 
