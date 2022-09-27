@@ -7,15 +7,15 @@ export class SeederService {
 
   constructor(private readonly seeders: Seeder[]) {}
 
-  async run(): Promise<any> {
+  async run(): Promise<void> {
     const promises = this.shouldRefresh()
       ? [this.drop(), this.seed()]
       : [this.seed()];
 
-    return Promise.all(promises);
+    await Promise.all(promises);
   }
 
-  async seed(): Promise<any> {
+  async seed(): Promise<void> {
     // Don't use `Promise.all` during insertion.
     // `Promise.all` will run all promises in parallel which is not what we want.
     for (const seeder of this.seeders) {
@@ -24,8 +24,8 @@ export class SeederService {
     }
   }
 
-  async drop(): Promise<any> {
-    return Promise.all(this.seeders.map(s => s.drop()));
+  async drop(): Promise<void> {
+    await Promise.all(this.seeders.map(s => s.drop()));
   }
 
   shouldRefresh(): boolean {

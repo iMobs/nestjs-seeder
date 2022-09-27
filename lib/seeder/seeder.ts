@@ -11,7 +11,7 @@ import {
 
 export interface SeederOptions {
   imports?: Array<
-    Type<any> | DynamicModule | Promise<DynamicModule> | ForwardReference
+    Type<unknown> | DynamicModule | Promise<DynamicModule> | ForwardReference
   >;
   providers?: Provider[];
 }

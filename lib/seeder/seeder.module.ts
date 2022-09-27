@@ -11,7 +11,7 @@ import { SeederService } from './seeder.service';
 export interface SeederModuleOptions {
   seeders: Provider<Seeder>[];
   imports?: Array<
-    Type<any> | DynamicModule | Promise<DynamicModule> | ForwardReference
+    Type<unknown> | DynamicModule | Promise<DynamicModule> | ForwardReference
   >;
   providers?: Provider[];
 }
@@ -30,7 +30,7 @@ export class SeederModule {
           useFactory: (...seeders: Seeder[]): SeederService => {
             return new SeederService(seeders);
           },
-          inject: options.seeders as Type<any>[],
+          inject: options.seeders as Type<unknown>[],
         },
       ],
     };

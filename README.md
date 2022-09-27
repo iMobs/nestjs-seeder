@@ -60,8 +60,8 @@ age: number;
 
 A seeder is a class that implements `Seeder` interface. It requires you to implement two methods:
 
-- `async seed(): Promise<any>`
-- `async drop(): Promise<any>`
+- `async seed(): Promise<void>`
+- `async drop(): Promise<void>`
 
 Use `seed` method to insert data into the database, and use `drop` method to clear the data in the database (collection / table).
 
@@ -80,7 +80,7 @@ import { Seeder, DataFactory } from "@imobs/nestjs-seeder";
 export class UsersSeeder implements Seeder {
   constructor(@InjectModel(User.name) private readonly user: Model<User>) {}
 
-  async seed(): Promise<any> {
+  async seed(): Promise<void> {
     // Generate 10 users.
     const users = DataFactory.createForClass(User).generate(10);
 
@@ -88,7 +88,7 @@ export class UsersSeeder implements Seeder {
     return this.user.insertMany(users);
   }
 
-  async drop(): Promise<any> {
+  async drop(): Promise<void> {
     return this.user.deleteMany({});
   }
 }

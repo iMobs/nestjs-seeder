@@ -1,4 +1,4 @@
 export interface Seeder {
-  seed(): Promise<any>;
-  drop(): Promise<any>;
+  seed(): Promise<void>;
+  drop(): Promise<void>;
 }
