@@ -11,18 +11,17 @@ type BaseType =
   | Record<string, unknown>;
 export type FactoryValue = BaseType | Array<BaseType>;
 export type FactoryValueGenerator = (
-  faker?: Faker,
-  ctx?: Record<string, unknown>,
+  faker: Faker,
+  ctx: Record<string, unknown>,
 ) => FactoryValue;
 
-export function Factory(arg: FactoryValueGenerator | FactoryValue) {
-  return (
-    target: Record<string, unknown>,
-    propertyKey: string | symbol,
-  ): void => {
+export function Factory(
+  arg: FactoryValue | FactoryValueGenerator,
+): PropertyDecorator {
+  return (target, propertyKey): void => {
     FactoryMetadataStorage.addPropertyMetadata({
       target: target.constructor,
-      propertyKey: propertyKey as string,
+      propertyKey: propertyKey.toString(),
       arg,
     });
   };

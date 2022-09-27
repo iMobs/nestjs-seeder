@@ -4,7 +4,7 @@ import {
 } from '../decorators/factory.decorator';
 
 export interface PropertyMetadata {
-  target: Function;
+  target: unknown;
   propertyKey: string;
-  arg: FactoryValueGenerator | FactoryValue;
+  arg: FactoryValue | FactoryValueGenerator;
 }
