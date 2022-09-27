@@ -14,7 +14,15 @@ export class FactoryMetadataStorageHost {
   }
 }
 
-const globalRef = global as any;
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace NodeJS {
+    interface Global {
+      FactoryMetadataStorage: FactoryMetadataStorageHost;
+    }
+  }
+}
+
 export const FactoryMetadataStorage: FactoryMetadataStorageHost =
-  globalRef.FactoryMetadataStorage ||
-  (globalRef.FactoryMetadataStorage = new FactoryMetadataStorageHost());
+  global.FactoryMetadataStorage ??
+  (global.FactoryMetadataStorage = new FactoryMetadataStorageHost());

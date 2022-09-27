@@ -19,7 +19,7 @@ export class DataFactory {
     return {
       generate: (
         count: number,
-        values: Record<string, any> = {},
+        values: Record<string, unknown> = {},
       ): Record<string, FactoryValue>[] => {
         const ret = Array<Record<string, FactoryValue>>();
         for (let i = 0; i < count; i++) {
@@ -32,7 +32,7 @@ export class DataFactory {
 
   private static generate(
     properties: PropertyMetadata[],
-    values: Record<string, any>,
+    values: Record<string, unknown>,
   ): Record<string, FactoryValue> {
     const ctx = { ...values };
     return properties.reduce(
