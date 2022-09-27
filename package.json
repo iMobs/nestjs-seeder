@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc",
     "prebuild": "rimraf dist",
-    "dev": "npm run prebuild && tsc -w"
+    "dev": "npm run prebuild && tsc -w",
+    "lint": "eslint \"lib/**/*.ts\" --fix"
   },
   "repository": {
     "type": "git",
@@ -37,8 +38,16 @@
     "@nestjs/common": "^7.3.1",
     "@nestjs/core": "^7.3.1",
     "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "reflect-metadata": "*",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.0"
+    "rxjs": "^6.6.0",
+    "typescript": "^4.8.4"
   }
 }
