@@ -21,11 +21,11 @@ export class DataFactory {
         count: number,
         values: Record<string, unknown> = {},
       ): Record<string, FactoryValue>[] => {
-        const ret = Array<Record<string, FactoryValue>>();
+        const result = [];
         for (let i = 0; i < count; i++) {
-          ret.push(this.generate(properties, values));
+          result.push(this.generate(properties, values));
         }
-        return ret;
+        return result;
       },
     };
   }
@@ -35,13 +35,18 @@ export class DataFactory {
     values: Record<string, unknown>,
   ): Record<string, FactoryValue> {
     const ctx = { ...values };
-    return properties.reduce(
-      (r, p) => ({
-        [p.propertyKey]: (ctx[p.propertyKey] =
-          typeof p.arg === 'function' ? p.arg(faker, ctx) : p.arg),
-        ...r,
-      }),
-      {},
-    );
+    return properties.reduce((acc, property) => {
+      let value: FactoryValue;
+
+      if (typeof property.arg === 'function') {
+        value = property.arg(faker, ctx);
+      } else {
+        value = property.arg;
+      }
+
+      acc[property.propertyKey] = value;
+
+      return acc;
+    }, {});
   }
 }
