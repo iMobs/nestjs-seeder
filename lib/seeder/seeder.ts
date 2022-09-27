@@ -1,13 +1,14 @@
-import { NestFactory } from '@nestjs/core';
-import { SeederModule, SeederModuleOptions } from './seeder.module';
-import { SeederService } from './seeder.service';
-import { Seeder } from './seeder.interface';
 import {
-  Provider,
-  Type,
   DynamicModule,
   ForwardReference,
+  Provider,
+  Type,
 } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+
+import { Seeder } from './seeder.interface';
+import { SeederModule, SeederModuleOptions } from './seeder.module';
+import { SeederService } from './seeder.service';
 
 export interface SeederOptions {
   imports?: Array<
@@ -22,7 +23,7 @@ export interface SeederRunner {
 
 async function bootstrap(options: SeederModuleOptions) {
   const app = await NestFactory.createApplicationContext(
-    SeederModule.register(options)
+    SeederModule.register(options),
   );
   const seedersService = app.get(SeederService);
   await seedersService.run();

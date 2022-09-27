@@ -1,6 +1,6 @@
 import {
-  FactoryValueGenerator,
   FactoryValue,
+  FactoryValueGenerator,
 } from '../decorators/factory.decorator';
 
 export interface PropertyMetadata {

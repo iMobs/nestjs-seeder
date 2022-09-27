@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
+
 import { Seeder } from './seeder.interface';
 
 @Injectable()
@@ -25,7 +26,7 @@ export class SeederService {
   }
 
   async drop(): Promise<void> {
-    await Promise.all(this.seeders.map(s => s.drop()));
+    await Promise.all(this.seeders.map((s) => s.drop()));
   }
 
   shouldRefresh(): boolean {

@@ -1,5 +1,6 @@
-import { PropertyMetadata } from '../interfaces';
 import { Type } from '@nestjs/common';
+
+import { PropertyMetadata } from '../interfaces';
 
 export class FactoryMetadataStorageHost {
   private properties = new Array<PropertyMetadata>();
@@ -9,7 +10,7 @@ export class FactoryMetadataStorageHost {
   }
 
   getPropertyMetadatasByTarget(target: Type<unknown>): PropertyMetadata[] {
-    return this.properties.filter(property => property.target === target);
+    return this.properties.filter((property) => property.target === target);
   }
 }
 

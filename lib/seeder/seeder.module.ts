@@ -1,10 +1,11 @@
 import {
-  Module,
   DynamicModule,
+  ForwardReference,
+  Module,
   Provider,
   Type,
-  ForwardReference,
 } from '@nestjs/common';
+
 import { Seeder } from './seeder.interface';
 import { SeederService } from './seeder.service';
 
