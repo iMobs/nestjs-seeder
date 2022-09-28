@@ -1,4 +1,5 @@
 lib
+test
 index.ts
 yarn.lock
 yarn-error.log
@@ -6,3 +7,4 @@ yarn-error.log
 tsconfig.json
 .prettierrc
 .commitlintrc.json
+jest.config.ts
